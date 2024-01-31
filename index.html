@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corazon</title>
+</head>
+<style>
+    body{
+        margin:0;
+        padding:0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000000;
+    }
+    .heart{
+        height: 150px;
+        width: 150px;
+        background-color: rgb(184, 21, 89);
+        position: relative;
+        transform: rotate(50deg);
+        box-shadow: -20px 20px 150px #97145c;
+        animation: palpitar 0.5s linear infinite alternate;
+
+    }
+    @keyframes palpitar{
+        0%{transform: rotate(50deg) scale(1.10);}
+        80%{transform: rotate(50deg) scale(1.0);}
+        100%{transform: rotate(50deg) scale(0.8);}
+    }
+    .heart::before{
+        content: "";
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        background: rgb(184, 21, 89);
+        right: 50%;
+        border-radius: 50%;
+        box-shadow: 20px 20px 150px #97145c;
+    }
+    .heart::after{
+        content: "";
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        background: rgb(184, 21, 89);
+        top: -50%;
+        border-radius: 50%;
+        box-shadow: 20px 20px 150px #97145c;
+    }
+    </style>
+<body>
+    <div class="heart"></div>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
